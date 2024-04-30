@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/website/components/*": ["module/website/components/*"],
+      "@/website/containers/*": ["module/website/containers/*"],
+      "@/website/lib/*": ["module/website/lib/*"],
+      "@/dashboard/components/*": ["module/dashboard/components/*"],
+      "@/dashboard/containers/*": ["module/dashboard/containers/*"],
+      "@/dashboard/lib/*": ["module/dashboard/lib/*"]
+    },
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

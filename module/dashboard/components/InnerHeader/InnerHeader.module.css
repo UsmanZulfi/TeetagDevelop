@@ -1,0 +1,6 @@
+.header {
+  background: rgba(0, 255, 204, 0.1);
+  padding: 22px 26px 20px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}

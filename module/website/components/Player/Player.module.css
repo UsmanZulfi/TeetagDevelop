@@ -1,0 +1,18 @@
+.playerbox {
+  text-align: end;
+  cursor: grabbing;
+}
+
+.img {
+  margin-bottom: 30px;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.shadow {
+  position: absolute;
+  inset: 0;
+  transform: translate(10px, 10px);
+  background-color: #ffff00;
+  z-index: -1;
+}

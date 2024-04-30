@@ -1,0 +1,11 @@
+.card{
+    background: #242424;
+    padding: 26px;
+}
+
+.card_header{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}

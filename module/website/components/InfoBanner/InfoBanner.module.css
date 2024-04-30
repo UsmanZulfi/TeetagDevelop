@@ -1,0 +1,27 @@
+.infoBanner {
+    padding: 60px 0;
+    background: url('/assets/info.png'),var(--green-light);
+    background-size: cover;
+}
+
+.infoBox {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoBox h6 {
+    font-size: 2.8rem;
+    -webkit-text-stroke: 0.723203px #000000;
+    -webkit-text-fill-color: #fff;
+    overflow-wrap: break-word;
+    flex-shrink: 0;
+}
+
+
+@media (max-width:767px) {
+    .infoBox {
+        justify-content: flex-start;
+    }
+}

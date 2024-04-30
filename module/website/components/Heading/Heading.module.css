@@ -1,0 +1,46 @@
+.heading{
+    position: relative;
+}
+
+.heading h1{
+    color: #0E0E0E;
+    font-size: 8rem;
+    line-height: 100px;
+    color: #0E0E0E;
+    -webkit-text-stroke:2px rgba(0, 255, 204, 0.2);
+   -webkit-text-fill-color: transparent;
+   margin-bottom: 20px;
+}
+
+.heading h3{
+    font-size: 6.4rem;
+    line-height: 84px;
+    color: #FFFF00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+@media (max-width:1350px){
+
+
+    .heading h3{
+        line-height: 60px;
+    }
+}
+
+@media (max-width:767px){
+    .heading h1{
+        font-size: 6.6rem;
+        line-height: 60px;
+        overflow-wrap:anywhere;
+       
+    }
+
+    .heading h3{
+        font-size: 5.4rem;
+        line-height: 40px;
+    }
+}

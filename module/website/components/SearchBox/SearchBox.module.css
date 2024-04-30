@@ -1,0 +1,27 @@
+.cat__searchbox {
+  position: relative;
+  height: 58px;
+  width: 100%;
+}
+
+.cat__searchbox input {
+  width: 100%;
+  height: 100%;
+  background: #0e0e0e;
+  padding: 16px;
+  border: 1px solid #00ffcc;
+}
+
+.cat__searchbox button {
+  background: #00ffcc;
+  padding: 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  color: var(--black-bg);
+}

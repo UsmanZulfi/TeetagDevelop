@@ -1,0 +1,41 @@
+.what_is_teetag {
+  background: url("/assets/bg-4shirts.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100%;
+  
+}
+
+.what_is_teetag p {
+  max-width: 1330px;
+  margin: 0 auto;
+}
+
+/* used the different png files for the shirts */
+
+@media (max-width: 1279px) {
+  .what_is_teetag {
+
+    background: url("/assets/large-background.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100%;
+  
+  }
+}
+
+@media (max-width: 767px) {
+  .what_is_teetag {
+
+    background: url("/assets/mobile-background.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100%;
+    
+    
+    
+  }
+}

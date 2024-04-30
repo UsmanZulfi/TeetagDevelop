@@ -1,0 +1,29 @@
+.product__counter_btn {
+  background: var(--black-bg);
+  border: 1px solid var(--yellow-primary);
+  box-shadow: 2px 2px 0 var(--yellow-primary);
+  padding: 4px 10px;
+  font-size: 2.4rem;
+}
+
+.product__counter_text {
+  font-size: 2.4rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 30px;
+  border: 1px solid var(--yellow-primary);
+  background: var(--black-bg);
+  box-shadow: 2px 2px 0 var(--yellow-primary);
+  width: 300px;
+}
+@media (max-width: 1100px) {
+  .product__counter_btn {
+    padding: 4px 10px;
+  }
+
+  .product__counter_text {
+    padding: 2px 16px;
+  }
+}

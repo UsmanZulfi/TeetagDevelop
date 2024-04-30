@@ -1,0 +1,49 @@
+.header{
+   padding: 24px 0;
+   position: relative;
+   z-index: 100;
+   background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.75) 55.91%, rgba(0, 0, 0, 0) 100.9%);
+}
+
+.logo{
+   position: relative;
+   z-index: 100;
+}
+
+.cart{
+   position: relative;
+   z-index: 100;
+}
+.counter{
+   width: 26px;
+   height: 26px;
+   background-color:  #00FF00;
+   color: #000;
+   border: 1px solid #000000;
+   border-radius: 50%;
+   font-size: 1.4rem;
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: -12px;
+   right: -12px;
+}
+
+@media (max-width:1100px) {
+
+   .header{
+      padding: 16px 0;
+   }
+   .logo img{
+      width:150px;
+   }
+}
+
+@media (max-width:767px){
+   .counter{
+      width: 20px;
+      height: 20px;
+   }
+}

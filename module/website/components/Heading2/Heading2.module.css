@@ -1,0 +1,25 @@
+.heading{
+    position: relative;
+}
+
+.heading h1{
+    color: #0E0E0E;
+    font-size: 7.4rem;
+    line-height: 67px;
+    color: #0E0E0E;
+    -webkit-text-stroke:2px rgba(0, 0, 0, 0.2);;
+   -webkit-text-fill-color: transparent;
+   margin-bottom: 16px;
+   text-align: left;
+}
+
+.heading h3{
+    font-size: 62px;
+    line-height: 70px;
+    color: #000;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    text-align: left;
+}

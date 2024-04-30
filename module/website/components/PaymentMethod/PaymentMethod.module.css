@@ -1,0 +1,16 @@
+.teetag__radio input{
+  accent-color: var(--green-light);
+  width: 30px;
+  height: 30px;
+}
+
+.teetag__radio label{
+    font-size: 2rem;
+}
+
+.teetag__radio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}

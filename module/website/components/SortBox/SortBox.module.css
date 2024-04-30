@@ -1,0 +1,24 @@
+.sortbox {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: flex-end;
+}
+
+.sortbox select {
+    background: #000000;
+    border: 1px solid #00FFCC;
+    padding: 8px 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('/assets/arrow_drop_down.png') no-repeat center right 6px;
+    background-size: 16px;
+    padding-right: 30px;
+    
+}
+
+.sortbox select option{
+  background: #000000;
+    border: 1px solid #00FFCC;
+}
