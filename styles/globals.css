@@ -134,6 +134,36 @@ body {
   box-shadow: 4px 4px 0 var(--yellow-primary);
 }
 
+.margin-top {
+  margin-top: -10px !important; 
+}
+
+.margin-top-5 {
+  margin-top: 5px !important; 
+}
+
+.margin-top-10 {
+  margin-top: 10px !important; 
+}
+
+.margin-top-20 {
+  margin-top: 20px !important; 
+}
+
+.margin-top-30 {
+  margin-top: 30px !important; 
+}
+
+.padding-5 {
+  /* padding: 15px !important;  */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.height45 {
+  height: 45px;
+}
+
 .teetag-image-shadow {
   background: #0e0e0e;
   box-shadow: 10px 10px 0 var(--yellow-primary);
@@ -141,7 +171,7 @@ body {
 
 .teetag__input label {
   color: var(--green-light);
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .teetag__input input {
@@ -791,6 +821,12 @@ option:not(:first-of-type) {
   display: flex;
 }
 
+.main-container-signup {
+  background: url("/assets/bg-2tag-signup.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+}
 
 .container {
   width: 88%;
@@ -802,6 +838,12 @@ option:not(:first-of-type) {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: 40px 120px;
   margin-top: 140px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.signup_box {
+  margin-top: 90px;
   margin-bottom: 50px;
   position: relative;
 }
@@ -905,6 +947,10 @@ option:not(:first-of-type) {
   .login__box {
     margin-top: 100px;
   }
+  .signup_box {
+    padding: 0px;
+    margin-top: 100px;
+  }
 }
 
 @media (min-width: 767px) and (max-width: 850px) {
@@ -912,6 +958,10 @@ option:not(:first-of-type) {
     width: 90%;
   }
   .login__box {
+    margin-top: 90px;
+  }
+  .signup_box {
+    padding: 0px;
     margin-top: 90px;
   }
 }
@@ -929,12 +979,19 @@ option:not(:first-of-type) {
   .login__box {
     margin-top: 40px;
   }
+  .signup_box {
+    padding: 0px;
+    margin-top: 40px;
+  }
 
   .notFound__wrapper .heading h1 {
     font-size: 20rem;
   }
 
   .main-container {
+    background-size: 0%;
+  }
+  .main-container-signup{
     background-size: 0%;
   }
 

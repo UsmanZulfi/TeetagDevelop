@@ -71,238 +71,252 @@ const SignUp = () => {
   };
   const [isSubmitting, setIsSubmitting] = useState(false);
   return (
-    <>
+    <div className="main-container-signup">
       <Toaster position="top-center" reverseOrder={false} />
       <TitleHead
         title="Sign Up"
         metaTitle="Sign Up"
         metaDesc="AMERICA'S LARGEST GAME OF TAG For a Greater Cause!"
       />
-      <section>
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-40">
-            <div className="pt-32 lg:pt-64 order-2 lg:order-1">
-              <div className="lg:max-w-2xl">
-                <Heading3 title="What is TEETAG?" />
-              </div>
-              <p className="h7 mt-16 lg:mt-36">
-                TeeTag is simple… It’s TAG! America’s LARGEST game of tag
-                through the use of custom t-shirts in order to help raise money
-                for children who’ve lost a parent to Cancer. TeeTag spans across
-                all 50 states of America and is meant to be a fun, interactive,
-                pay-it-forward game to raise money for a greater cause.
-              </p>
-              <Link href="/story" className="btn-teetag yellow">
-                Learn My Story
-              </Link>
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-40 signup_box">
+          <div className="pt-32 lg:pt-64 order-2 lg:order-1">
+            <div className="lg:max-w-2xl">
+              <Heading3 title="What is TEETAG?" />
             </div>
-            <div className="signup__box order-1 lg:order-2">
-              <Heading title="Sign Up" />
-              <div className="relative">
-                <Formik
-                  initialValues={initialValues}
-                  validate={validate}
-                  onSubmit={async (
-                    values: SignUpProps,
-                    actions: FormikHelpers<SignUpProps>,
-                  ) => {
-                    actions.setSubmitting(false);
-                    setIsSubmitting(true);
-                    setFormValues(values);
-                    const response = await dispatch(
-                      register({
-                        name: values.firstName + " " + values.lastName,
-                        email: values.email,
-                        password: values.password,
-                        phone: "+1" + values.phone,
-                      }),
+            <p className="h9 mt-16 lg:mt-30">
+              TeeTag is simple… It’s TAG! America’s LARGEST game of tag through
+              the use of custom t-shirts in order to help raise money for
+              children who’ve lost a parent to Cancer. TeeTag spans across all
+              50 states of America and is meant to be a fun, interactive,
+              pay-it-forward game to raise money for a greater cause.
+            </p>
+            <a href="/story">
+            <button className="btn-teetag yellow padding-5" type="submit">
+              View My Story
+            </button>
+            </a>
+          </div>
+          <div className="signup__box order-1 lg:order-2">
+            <Heading title="Sign Up" />
+            <div className="relative">
+              <Formik
+                initialValues={initialValues}
+                validate={validate}
+                onSubmit={async (
+                  values: SignUpProps,
+                  actions: FormikHelpers<SignUpProps>
+                ) => {
+                  actions.setSubmitting(false);
+                  setIsSubmitting(true);
+                  setFormValues(values);
+                  const response = await dispatch(
+                    register({
+                      name: values.firstName + " " + values.lastName,
+                      email: values.email,
+                      password: values.password,
+                      phone: "+1" + values.phone,
+                    })
+                  );
+                  if (response.type === "auth/register/rejected") {
+                    setIsSubmitting(false);
+                    toast.error(response.payload);
+                  } else {
+                    localStorage.setItem(
+                      "userToken",
+                      JSON.stringify(response.payload.accessToken)
                     );
-                    if (response.type === "auth/register/rejected") {
-                      setIsSubmitting(false);
-                      toast.error(response.payload);
-                    } else {
-                      localStorage.setItem(
-                        "userToken",
-                        JSON.stringify(response.payload.accessToken),
-                      );
 
-                      const cart = JSON.parse(localStorage.getItem("cart"));
-                      if (cart) {
-                        //insert cart
-                        const res = await insertCart(cart);
+                    const cart = JSON.parse(localStorage.getItem("cart"));
+                    if (cart) {
+                      //insert cart
+                      const res = await insertCart(cart);
+                      if (res.status === 200) {
+                        const res = await getCart();
                         if (res.status === 200) {
-                          const res = await getCart();
-                          if (res.status === 200) {
-                            dispatch(updateCart(res.result.cart));
-                          }
+                          dispatch(updateCart(res.result.cart));
                         }
-                      } else dispatch(updateCart(response.payload.user.cart));
-                    }
-                  }}
-                >
-                  <Form className="flex flex-col justify-center gap-10">
-                    <div className="grid grid-cols-2 gap-5">
-                      <div className="col-span-1 teetag__input">
-                        <label
-                          htmlFor="firstName"
-                          className="block mb-4 capitalize font-fugaz"
-                        >
-                          First Name
-                        </label>
-                        <Field
-                          type="text"
-                          name="firstName"
-                          id="firstName"
-                          placeholder="Enter First Name"
-                          defaultValue={formValues.firstName}
-                        />
-                        <ErrorMessage
-                          name="firstName"
-                          component="p"
-                          className="label-error mt-6"
-                        />
-                      </div>
-                      <div className="col-span-1 teetag__input">
-                        <label
-                          htmlFor="lastName"
-                          className="block mb-4 capitalize font-fugaz"
-                        >
-                          Last Name
-                        </label>
-                        <Field
-                          type="text"
-                          name="lastName"
-                          id="lastName"
-                          placeholder="Enter Last Name"
-                          defaultValue={formValues.lastName}
-                        />
-                        <ErrorMessage
-                          name="lastName"
-                          component="p"
-                          className="label-error mt-6"
-                        />
-                      </div>
-                    </div>
-                    <div className="teetag__input">
+                      }
+                    } else dispatch(updateCart(response.payload.user.cart));
+                  }
+                }}
+              >
+                <Form className="flex flex-col justify-center gap-10">
+                  <div className="grid grid-cols-2 gap-5 margin-top">
+                    <div className="col-span-1 teetag__input">
                       <label
-                        htmlFor="email"
+                        htmlFor="firstName"
                         className="block mb-4 capitalize font-fugaz"
                       >
-                        Email
+                        First Name
                       </label>
                       <Field
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Enter Your Email"
-                        defaultValue={formValues.email}
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="Enter here"
+                        className="height45"
+                        defaultValue={formValues.firstName}
                       />
                       <ErrorMessage
-                        name="email"
+                        name="firstName"
                         component="p"
                         className="label-error mt-6"
                       />
                     </div>
-                    <div className="grid grid-cols-2 gap-5">
-                      <div className="col-span-1 teetag__input">
-                        <label
-                          htmlFor="phone"
-                          className="block mb-4 capitalize font-fugaz"
-                        >
-                          Phone Number
-                        </label>
-                        <Field
-                          type="text"
-                          name="phone"
-                          id="phone"
-                          placeholder="Enter Your Phone"
-                          defaultValue={formValues.phone}
-                        />
-                        <ErrorMessage
-                          name="phone"
-                          component="p"
-                          className="label-error mt-6"
-                        />
-                      </div>
-                      <div className="col-span-1 teetag__input">
-                        <label
-                          htmlFor="password"
-                          className="block mb-4 capitalize font-fugaz"
-                        >
-                          Password
-                        </label>
-                        <Field
-                          type="password"
-                          name="password"
-                          id="password"
-                          placeholder="Enter Your Password"
-                          defaultValue={formValues.password}
-                        />
-                        <ErrorMessage
-                          name="password"
-                          component="p"
-                          className="label-error mt-6"
-                        />
-                      </div>
-                    </div>
-                    {(isSubmitting && <LoadingSpinner />) || (
-                      <button className="btn-teetag yellow" type="submit">
-                        Sign Up
-                      </button>
-                    )}
-                  </Form>
-                </Formik>
-                <div className="signup__box-center py-16">
-                  <p className="text-xl uppercase">OR</p>
-                </div>
-                <div className="flex items-center justify-center">
-                  <div className="w-full">
-                    <div className="flex justify-center items-start gap-10">
-                      <Link
-                        href={
-                          process.env.NEXT_PUBLIC_STAGING_SERVER_URL +
-                          "/auth/facebook"
-                        }
-                        className="mb-12 btn__teetag_secondary"
+                    <div className="col-span-1 teetag__input">
+                      <label
+                        htmlFor="lastName"
+                        className="block mb-4 capitalize font-fugaz"
                       >
-                        <FaFacebookF className="text-3xl" />
-                      </Link>
-                      <Link
-                        href={
-                          process.env.NEXT_PUBLIC_STAGING_SERVER_URL +
-                          "/auth/google"
-                        }
-                        className="btn__teetag_secondary"
-                      >
-                        <FaGoogle className="text-3xl" />
-                      </Link>
+                        Last Name
+                      </label>
+                      <Field
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        className="height45"
+                        placeholder="Enter here"
+                        defaultValue={formValues.lastName}
+                      />
+                      <ErrorMessage
+                        name="lastName"
+                        component="p"
+                        className="label-error mt-6"
+                      />
                     </div>
-                    <p className="block mt-24 text-xl text-center">
-                      Already have an account?
-                      <Link href="/signin" className="ml-3 text-green-light">
-                        Login
-                      </Link>
-                    </p>
                   </div>
+                  <div className="teetag__input margin-top">
+                    <label
+                      htmlFor="email"
+                      className="block mb-4 capitalize font-fugaz"
+                    >
+                      Email
+                    </label>
+                    <Field
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="height45"
+                      placeholder="Enter here"
+                      defaultValue={formValues.email}
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="p"
+                      className="label-error mt-6"
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-5 margin-top">
+                    <div className="col-span-1 teetag__input">
+                      <label
+                        htmlFor="phone"
+                        className="block mb-4 capitalize font-fugaz"
+                      >
+                        Phone Number
+                      </label>
+                      <Field
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        className="height45"
+                        placeholder="Enter here"
+                        defaultValue={formValues.phone}
+                      />
+                      <ErrorMessage
+                        name="phone"
+                        component="p"
+                        className="label-error mt-6"
+                      />
+                    </div>
+                    <div className="col-span-1 teetag__input">
+                      <label
+                        htmlFor="password"
+                        className="block mb-4 capitalize font-fugaz"
+                      >
+                        Password
+                      </label>
+                      <Field
+                        type="password"
+                        name="password"
+                        id="password"
+                        className="height45"
+                        placeholder="Enter here"
+                        defaultValue={formValues.password}
+                      />
+                      <ErrorMessage
+                        name="password"
+                        component="p"
+                        className="label-error mt-6"
+                      />
+                    </div>
+                  </div>
+                  {(isSubmitting && <LoadingSpinner />) || (
+                    <button
+                      className="btn-teetag yellow margin-top-5"
+                      type="submit"
+                    >
+                      Sign Up
+                    </button>
+                  )}
+                </Form>
+              </Formik>
+              <div className="signup__box-center py-16">
+                <p className="text-xl uppercase">OR</p>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="w-full">
+                  <div className="md:grid grid-cols-1 flex justify-center items-start gap-10">
+                    <Link
+                      href={
+                        process.env.NEXT_PUBLIC_STAGING_SERVER_URL +
+                        "/auth/facebook"
+                      }
+                      className="mb-12 btn__teetag_secondary margin-top width48"
+                    >
+                      <FaFacebookF className="text-xl" />
+                      <span className="hidden md:inline-block">
+                        Sign up with Facebook
+                      </span>
+                    </Link>
+                    <Link
+                      href={
+                        process.env.NEXT_PUBLIC_STAGING_SERVER_URL +
+                        "/auth/google"
+                      }
+                      className="btn__teetag_secondary margin-top width48"
+                    >
+                      <FaGoogle className="text-xl" />
+                      <span className="hidden md:inline-block">
+                        Sign up with Google
+                      </span>
+                    </Link>
+                  </div>
+                  <p className="block mt-24 text-xl text-center margin-top-30">
+                    Already have an account?
+                    <Link href="/signin" className="ml-3 text-green-light">
+                      Login
+                    </Link>
+                  </p>
                 </div>
               </div>
-              <Link
-                href="/"
-                className="flex justify-center items-center gap-5 mt-20 text-xl text-center hover:text-green-light"
-              >
-                <Image
-                  src="/assets/left_arrow.png"
-                  width={24}
-                  height={24}
-                  alt="left_arrow"
-                />
-                Back to Homepage
-              </Link>
             </div>
+            <Link
+              href="/"
+              className="flex justify-center items-center gap-5 mt-8 text-xl text-center hover:text-green-light"
+            >
+              <Image
+                src="/assets/left_arrow.png"
+                width={24}
+                height={24}
+                alt="left_arrow"
+              />
+              Back to Homepage
+            </Link>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 

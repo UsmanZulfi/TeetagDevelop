@@ -105,9 +105,7 @@ const SignIn = () => {
                     name="login"
                     id="login"
                     placeholder="Enter here"
-                    style={{
-                      height: "45px",
-                    }}
+                    className="height45"
                   />
                   <ErrorMessage
                     name="login"
@@ -127,9 +125,7 @@ const SignIn = () => {
                     name="password"
                     id="password"
                     placeholder="Enter here"
-                    style={{
-                      height: "45px",
-                    }}
+                    className="height45"
                   />
                   <ErrorMessage
                     name="password"
