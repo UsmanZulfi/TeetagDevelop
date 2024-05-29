@@ -13,7 +13,7 @@
 }
 
 .heading h3{
-    font-size: 6.4rem;
+    font-size: 5.2rem;
     line-height: 84px;
     color: #FFFF00;
     position: absolute;
@@ -40,7 +40,7 @@
     }
 
     .heading h3{
-        font-size: 5.4rem;
+        font-size: 4rem;
         line-height: 40px;
     }
 }

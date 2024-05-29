@@ -141,7 +141,7 @@ body {
 
 .teetag__input label {
   color: var(--green-light);
-  font-size: 2.4rem;
+  font-size: 24px;
 }
 
 .teetag__input input {
@@ -534,13 +534,8 @@ option:not(:first-of-type) {
   background-repeat: no-repeat;
 }
 
-.login__box {
-  background: #0e0e0e;
-  border: 1px solid var(--green-light);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 40px 120px;
-  margin-top: 40px;
-  position: relative;
+.custom-label {
+  font-size: 5px; 
 }
 
 .signup__box {
@@ -598,21 +593,35 @@ option:not(:first-of-type) {
   box-shadow: 0 0;
 }
 
+.width97 {
+  width: 97%;
+}
+
+.width99 {
+  width: 99%;
+}
+
+.width48 {
+  width: 50%;
+}
+
 .btn__teetag_secondary {
-  background: var(--yellow-primary);
   box-sizing: border-box;
   color: var(--black-bg);
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 2.2rem;
-  padding: 20px 70px;
+  font-weight: 600;
+  font-size: 1.9rem;
   position: relative;
-  width: 100%;
   text-align: center;
   box-shadow: 8px 8px 0 var(--green-light);
+  background: var(--yellow-primary);
+  align-items: center;
+  gap: 10px;
+  height: 45px;
+  padding: 30px, 60px, 30px, 60px;
+  position: relative;
+  margin-top: 30px;
   transition: all 0.4s ease-in-out;
 }
 
@@ -687,9 +696,10 @@ option:not(:first-of-type) {
   box-sizing: border-box;
   color: var(--black-secondary);
   display: inline-block;
+  height: 45px;
   font-weight: 700;
   font-size: 2rem;
-  padding: 20px 60px;
+  padding: 30px, 60px, 30px, 60px;
   position: relative;
   text-transform: uppercase;
   margin-top: 30px;
@@ -772,6 +782,28 @@ option:not(:first-of-type) {
 .total__separator {
   padding: 32px 0;
   border-bottom: 1px solid #e4e4e4;
+}
+
+.main-container {
+  background: url("/assets/bg-2tag.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+
+.container {
+  width: 88%;
+}
+
+.login__box {
+  background: #0e0e0e;
+  border: 1px solid var(--green-light);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 40px 120px;
+  margin-top: 140px;
+  margin-bottom: 50px;
+  position: relative;
 }
 
 .image-container {
@@ -864,14 +896,46 @@ option:not(:first-of-type) {
     padding: 150px 0;
   }
 }
+
+@media (min-width: 850px) and (max-width: 1000px) {
+  .container {
+    width: 100%;
+  }
+
+  .login__box {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 850px) {
+  .container {
+    width: 90%;
+  }
+  .login__box {
+    margin-top: 90px;
+  }
+}
+
 @media (max-width: 767px) {
   #AmazonPayButton {
     height: 100px !important;
     width: 100% !important;
   }
 
+  .teetag__input label {
+    font-size: 16px;
+  }
+
+  .login__box {
+    margin-top: 40px;
+  }
+
   .notFound__wrapper .heading h1 {
     font-size: 20rem;
+  }
+
+  .main-container {
+    background-size: 0%;
   }
 
   .notFound__wrapper .heading h3 {
@@ -916,6 +980,16 @@ option:not(:first-of-type) {
 @media (max-width: 600px) {
   .btn__teetag_secondary {
     padding: 20px;
+  }
+}
+@media (min-width: 767px) {
+  .width48 {
+    width: 100%;
+  }
+}
+@media (max-width: 380px) {
+  .width48 {
+    width: 46%;
   }
 }
 .darkBG {
