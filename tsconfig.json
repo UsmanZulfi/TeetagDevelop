@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "types": [],
     "paths": {
       "@/website/components/*": ["module/website/components/*"],
       "@/website/containers/*": ["module/website/containers/*"],
       "@/website/lib/*": ["module/website/lib/*"],
       "@/dashboard/components/*": ["module/dashboard/components/*"],
       "@/dashboard/containers/*": ["module/dashboard/containers/*"],
-      "@/dashboard/lib/*": ["module/dashboard/lib/*"]
+      "@/dashboard/lib/*": ["module/dashboard/lib/*"],
+      "react": ["./node_modules/@types/react"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -22,8 +24,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "node_modules/yargs"]
 }

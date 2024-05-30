@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 //spaces might be leading to errors!? Renamed files without spaces
 const players = [
   {
-    image: "/assets/Dan_Kentucky.JPG",
+    image: "/assets/Dan_Kentucky.png",
     name: "Dan",
     state: "Kentucky",
   },
@@ -16,22 +16,22 @@ const players = [
     state: "Illinois",
   },
   {
-    image: "/assets/Emma_Illinois.PNG",
+    image: "/assets/Emma_Illinois.png",
     name: "Emma",
     state: "Illinois",
   },
   {
-    image: "/assets/Evan_Illinois.PNG",
+    image: "/assets/Evan_Illinois.png",
     name: "Evan",
     state: "Illinois",
   },
   {
-    image: "/assets/Sophia+Ava_Illinois.PNG",
+    image: "/assets/Sophia+Ava_Illinois.png",
     name: "Sophia + Ava",
     state: "Illinois",
   },
   {
-    image: "/assets/Maggie_Illinois.PNG",
+    image: "/assets/Maggie_Illinois.png",
     name: "Maggie",
     state: "Illinois",
   },
@@ -46,7 +46,7 @@ const players = [
     state: "Illinois",
   },
   {
-    image: "/assets/IMG_8674.PNG",
+    image: "/assets/IMG_8674.png",
     name: "Jack",
     state: "Illinois",
   },
