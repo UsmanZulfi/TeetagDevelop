@@ -150,7 +150,7 @@ export const Header = () => {
               <div className="flex items-center col-span-6 gap-6 lg:col-span-1 xl:col-start-12 justify-self-end">
                 <Link href="/cart" className={styles.cart}>
                   <MdOutlineShoppingCart className="w-12 h-12 hover:text-yellow-primary mt-3" />
-                  <div className={styles.counter + " font-fugaz mt-2"}>
+                  <div className={styles.counter + " font-fugaz mt-2 mr-2"}>
                     {cart?.cart_count ?? 0}
                   </div>
                 </Link>
