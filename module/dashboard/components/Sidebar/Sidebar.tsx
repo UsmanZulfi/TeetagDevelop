@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { BiBarChartAlt, BiUserVoice } from "react-icons/bi";
 import { FiUsers } from "react-icons/fi";
-import { GoInbox, GoSettings } from "react-icons/go";
+import { GoInbox,GoBrowser } from "react-icons/go";
 import {
   HiOutlineAcademicCap,
   HiOutlineShoppingBag,
@@ -370,7 +370,7 @@ const Sidebar = ({ isToggle }: SideBarProps) => {
                 href="/dashboard/settings"
                 className="flex justify-start items-center gap-4 cursor-pointer"
               >
-                <GoSettings />
+                <GoBrowser />
                 <p>Settings</p>
               </Link>
             </li>
