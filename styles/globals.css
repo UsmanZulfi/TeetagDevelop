@@ -74,6 +74,9 @@ body {
 .h9 {
   font-size: 2rem;
 }
+.h10 {
+  font-size: 1.8rem;
+}
 .h-custom {
   font-size: 4.2rem;
 }
@@ -188,6 +191,10 @@ body {
   border: 1px solid var(--yellow-primary);
   border-radius: unset;
   outline: none;
+}
+.teetag__input .override-label {
+  color: var(--green-light);
+  font-size: inherit;
 }
 .teetag__input select:focus-visible {
   border: 1px solid var(--yellow-primary);
@@ -333,7 +340,10 @@ option:not(:first-of-type) {
   position: relative;
   cursor: pointer;
 }
-
+.btn-contribute_2 {
+  margin-top: 60px !important;
+  width: 80%;
+}
 .btn-contribute {
   margin-top: 60px !important;
   width: 75%;
@@ -709,6 +719,26 @@ option:not(:first-of-type) {
   font-size: 2.4rem;
   margin-bottom: 10px;
 }
+.teetag-list2 {
+  list-style-image: url("/assets/bullet.svg");
+  margin: 0 0 0 10px;
+}
+
+.teetag-list2 li {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.teetag-list2.sm {
+  list-style-image: url("/assets/bullet.svg");
+  margin: 0 0 0 20px;
+  padding: 0 0 0 10px;
+}
+
+.teetag-list2.sm li {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
 .btn-teetag:disabled {
   cursor: default;
 }
@@ -739,7 +769,7 @@ option:not(:first-of-type) {
   display: inline-block;
   height: 50px;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 10px;
@@ -1078,6 +1108,10 @@ option:not(:first-of-type) {
   .width48 {
     width: 46%;
   }
+  .btn-contribute_2 {
+    margin-top: 60px !important;
+    width: 100%;
+  }
 }
 .darkBG {
   background-color: rgba(0, 0, 0, 0.2);
@@ -1120,4 +1154,24 @@ option:not(:first-of-type) {
 .map-icon {
   border-radius: 50%;
   border: 2px solid yellow;
+}
+@media (max-width: 760px){
+  .bullet {
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 400;
+      margin-bottom: 20px;
+  }
+  .Note_Text{
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .Note{
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
 }

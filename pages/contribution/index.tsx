@@ -3,7 +3,7 @@ import { Header } from "@/website/components/Header/Header";
 import { TitleHead } from "@/website/components/TitleHead/TitleHead";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./contribution.module.css";
 
 const prices = [
@@ -52,6 +52,20 @@ const Contribution = () => {
 
     setPrice(contributePrice ? contributePrice : "");
   }
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleContribute = () => {
     if (price) {
@@ -70,24 +84,39 @@ const Contribution = () => {
         <Header />
         <div className="story-content">
           <div className="container">
-            <h1 className="text-center uppercase h1 font-fugaz shadow-heading">
+            <h1 className="text-center uppercase h3 font-fugaz shadow-heading">
               make a contribution
             </h1>
           </div>
         </div>
       </section>
-      <p className="mt-10 mb-20 text-center h8 px-11 md:px-52 lg:px-80 md:font-bold">
-        Contributions are a fast and easy way to continue spreading the game of
-        TeeTag while also raising money for the cause! For every $25 contributed
-        - 1 selectively chosen individual will automatically be tagged and sent
-        a t-shirt! TeeTag has hundreds of people all across America who are
-        ready and waiting to get tagged!
-        <br />
-        <br />
-        20% of all proceeds from contributions will still go directly to the
-        cause.
-      </p>
-
+      {windowWidth > 768 ? (
+        <div className="container">
+          <p className="mt-10 text-center h10 px-11 md:px-52 lg:px-80 md:font-medium">
+            Contributions are a fast and easy way to continue spreading the game of
+            TeeTag while also raising money for the cause! For every $25 contributed
+            - 1 selectively chosen individual will automatically be tagged and sent
+            a t-shirt! TeeTag has hundreds of people all across America who are
+            ready and waiting to get tagged!
+            <br />
+            <br />
+            20% of all proceeds from contributions will still go directly to the
+            cause.
+          </p>
+        </div>
+      ) : (
+          <p className="mt-10 text-center h11 px-12 md:px-52 lg:px-80 md:font-medium h9" style={{paddingLeft:"7%",paddingRight:"7%"}}>
+            Contributions are a fast and easy way to continue spreading the game of
+            TeeTag while also raising money for the cause! For every $25 contributed
+            - 1 selectively chosen individual will automatically be tagged and sent
+            a t-shirt! TeeTag has hundreds of people all across America who are
+            ready and waiting to get tagged!
+            <br />
+            <br />
+            20% of all proceeds from contributions will still go directly to the
+            cause.
+          </p>
+      )}
       <section className="section">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 xl:gap-44 items-start xl:items-center">
@@ -100,13 +129,17 @@ const Contribution = () => {
               />
             </div>
             <div>
-              <h3 className="h3 font-fugaz uppercase text-green-light mb-10">
+              <h3 className="h5 font-fugaz uppercase text-green-light mb-10">
                 Custom Contribution
               </h3>
               <div>
-                <p className="h8 text-green-light font-fugaz uppercase mb-8">
+              {windowWidth > 768 ? (
+                <p className="h9 text-green-light font-fugaz uppercase mb-8">
                   price
-                </p>
+                </p>):
+                <p className="h9 text-green-light font-fugaz uppercase mb-8">
+                price:
+              </p>}
                 <div className="flex flex-wrap items-center gap-6 mb-10 variation_flex">
                   {prices.map((price) => (
                     <label
@@ -131,10 +164,10 @@ const Contribution = () => {
                 </div>
               </div>
               <div>
-                <div className="teetag__input max-w-lg">
+                <div className="teetag__input max-w-xl">
                   <label
                     htmlFor="name"
-                    className="block mb-4 font-fugaz uppercase"
+                    className="h9 block font-fugaz uppercase mb-4"
                   >
                     Add Custom Amount
                   </label>
@@ -142,13 +175,13 @@ const Contribution = () => {
                     type="number"
                     name="name"
                     id="name"
-                    placeholder="Enter Your Amount"
+                    placeholder="Enter Custom Amount"
                     onChange={(e) => setPrice(e.target.value)}
                   />
                 </div>
               </div>
               <button
-                className="btn-teetag text-center yellow btn-contribute"
+                className="btn-teetag text-center yellow btn-contribute_2"
                 onClick={handleContribute}
               >
                 Contribute Now
@@ -159,33 +192,33 @@ const Contribution = () => {
       </section>
       <section className={styles.section}>
         <div className="container">
-          <ul className="teetag-list sm">
+          <ul className="teetag-list2 sm">
             <li>
-              <span className="pl-3">
+              <span className="pl-3 bullet font-exo">
                 For every $25 contributed = 1 select individual will
                 automatically be tagged and sent a t-shirt
               </span>
             </li>
             <li>
-              <span className="pl-3">
+              <span className="pl-3 bullet font-exo">
                 20% of ALL proceeds from contributions will still go directly to
                 the scholarship recipient TeeTag is currently helping raise
                 money for.
               </span>
             </li>
             <li>
-              <span className="pl-3">
+              <span className="pl-3 bullet font-exo">
                 The more people tagged, the FASTER & BIGGER TeeTag spreads!
               </span>
             </li>
             <li>
-              <span className="pl-3">
+              <span className="pl-3 bullet font-exo">
                 Your generosity is greatly appreciated :)
               </span>
             </li>
           </ul>
-          <p className="h8">
-            <span className="font-semibold">Note:</span> Contributions are not
+          <p className="h11 pl-5 Note_Text">
+            <span className="font-semibold Note">Note:</span> Contributions are not
             considered donations for tax purposes.
           </p>
         </div>
