@@ -181,7 +181,7 @@ const Contribution = () => {
                 </div>
               </div>
               <button
-                className="btn-teetag text-center yellow btn-contribute_2"
+                className="btn-teetag text-center yellow btn-contribute_2 padding-top-5"
                 onClick={handleContribute}
               >
                 Contribute Now
