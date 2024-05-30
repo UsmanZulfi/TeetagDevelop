@@ -92,7 +92,7 @@ const SignUp = () => {
               pay-it-forward game to raise money for a greater cause.
             </p>
             <a href="/story">
-            <button className="btn-teetag yellow padding-5" type="submit">
+            <button className="btn-teetag yellow padding-top-5" type="submit">
               View My Story
             </button>
             </a>
@@ -253,7 +253,7 @@ const SignUp = () => {
                   </div>
                   {(isSubmitting && <LoadingSpinner />) || (
                     <button
-                      className="btn-teetag yellow margin-top-5"
+                      className="btn-teetag yellow margin-top-5 padding-top-5"
                       type="submit"
                     >
                       Sign Up

@@ -16,7 +16,7 @@ const story = () => {
         <Header />
         <div className="story-content">
           <div className="container">
-            <h1 className="text-center uppercase h1 font-fugaz shadow-heading">
+            <h1 className="text-center uppercase h3 font-fugaz shadow-heading">
               Jack Bradley
             </h1>
           </div>

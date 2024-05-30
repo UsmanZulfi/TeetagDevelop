@@ -142,7 +142,7 @@ const SignIn = () => {
                   </Link>
                 </div>
                 {(isSubmitting && <LoadingSpinner />) || (
-                  <button className="btn-teetag yellow m-0 width99">
+                  <button className="btn-teetag yellow m-0 width99 padding-top-5">
                     Login
                   </button>
                 )}
