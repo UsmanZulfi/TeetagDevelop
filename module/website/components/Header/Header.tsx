@@ -62,19 +62,6 @@ export const Header = () => {
                   </li>
                   <li>
                     <Link
-                      href="/minions"
-                      data-text="Minions"
-                      className={`text-base xl:text-lg hover:text-yellow-primary hover:font-semibold ${
-                        router.pathname === "/minions"
-                          ? "text-yellow-primary font-semibold"
-                          : ""
-                      }`}
-                    >
-                      State Ambassadors
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/story"
                       data-text="My Story"
                       className={`text-base xl:text-lg hover:text-yellow-primary hover:font-semibold ${
@@ -84,6 +71,23 @@ export const Header = () => {
                       }`}
                     >
                       My Story
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={
+                        role != "scholarshipRecipient"
+                          ? "/dashboard"
+                          : window.location.pathname
+                      }
+                      data-text="Track Your Tag"
+                      className={`text-base xl:text-lg hover:text-yellow-primary hover:font-semibold ${
+                        router.pathname === "/dashboard"
+                          ? "text-yellow-primary font-semibold"
+                          : ""
+                      }`}
+                    >
+                      Track Your Tag
                     </Link>
                   </li>
                   <li>
@@ -114,22 +118,17 @@ export const Header = () => {
                   </li>
                   <li>
                     <Link
-                      href={
-                        role != "scholarshipRecipient"
-                          ? "/dashboard"
-                          : window.location.pathname
-                      }
-                      data-text="Track Your Tag"
+                      href="/minions"
+                      data-text="Minions"
                       className={`text-base xl:text-lg hover:text-yellow-primary hover:font-semibold ${
-                        router.pathname === "/dashboard"
+                        router.pathname === "/minions"
                           ? "text-yellow-primary font-semibold"
                           : ""
                       }`}
                     >
-                      Track Your Tag
+                      State Ambassadors
                     </Link>
                   </li>
-
                   <li>
                     <Link
                       href="/leaderboard"
