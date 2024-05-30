@@ -149,15 +149,15 @@ export const Header = () => {
             <div className="flex justify-end">
               <div className="flex items-center col-span-6 gap-6 lg:col-span-1 xl:col-start-12 justify-self-end">
                 <Link href="/cart" className={styles.cart}>
-                  <MdOutlineShoppingCart className="w-12 h-12 hover:text-yellow-primary" />
-                  <div className={styles.counter + " font-fugaz"}>
+                  <MdOutlineShoppingCart className="w-12 h-12 hover:text-yellow-primary mt-3" />
+                  <div className={styles.counter + " font-fugaz mt-2"}>
                     {cart?.cart_count ?? 0}
                   </div>
                 </Link>
                 {user === null ? (
                   <Link
                     href="/signin"
-                    className="btn-teetag-slim yellow px-7 py-4"
+                    className="btn-teetag-slim yellow px-12 py-4 ml-6 text-green-light"
                     onClick={() =>
                       localStorage.setItem("lastPage", window.location.pathname)
                     }
