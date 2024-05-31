@@ -36,8 +36,8 @@ function Play({ categories }: PlayNowProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categories: Category[] = await fetchAllCategories();
-
+  // const categories: Category[] = await fetchAllCategories();
+let categories=[];
   if (!categories) {
     return {
       notFound: true,
