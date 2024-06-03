@@ -35,11 +35,11 @@ export default function State({ category }: StateProps) {
         alt={image.alt}
         placeholder="blur"
         blurDataURL="/assets/placeholder.png"
-        width={290}
+        width={292}
         height={140}
         className="w-120"
       />
-      <h4 className="mt-4 text-center uppercase h6 font-fugaz text-yellow-primary">
+      <h4 className="mt-4 text-center uppercase h8 font-fugaz text-yellow-primary">
         {playCategory.name}
       </h4>
     </Link>
