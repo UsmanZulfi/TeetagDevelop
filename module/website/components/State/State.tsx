@@ -14,7 +14,7 @@ interface StateProps {
 
 export default function State({ category }: StateProps) {
   const [playCategory, setPlayCategory] = useState<Category>(category);
-  console.log("This is category:", playCategory);
+  console.log("This is category:", playCategory.image[0]);
   // Default image data
   const defaultImage = {
     src: "/assets/placeholder.png",
@@ -26,6 +26,7 @@ export default function State({ category }: StateProps) {
       ? playCategory.image[0]
       : defaultImage;
   return (
+   
     <Link
       href={`/states/${encodeURIComponent(category.id)}`}
       className={styles.state}

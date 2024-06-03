@@ -9,7 +9,7 @@ import Players from "@/website/containers/Players/Players";
 import States from "@/website/containers/States/States";
 import Story from "@/website/containers/Story/Story";
 import WhatIsTeetag from "@/website/containers/WhatIsTeetag/WhatIsTeetag";
-
+import PreviewPage from '../Package'
 export default function Home() {
   return (
     <>
@@ -26,6 +26,7 @@ export default function Home() {
       <States />
       <Minions />
       <Players />
+      <PreviewPage/>
       <Order showBanner={true} />
       <Footer />
     </>

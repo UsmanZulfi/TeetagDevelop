@@ -14,6 +14,8 @@
   "dependencies": {
     "@next/font": "13.1.1",
     "@reduxjs/toolkit": "^1.9.1",
+    "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^3.4.1",
     "@tanstack/react-table": "^8.8.5",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -22,7 +24,7 @@
     "@types/woocommerce__woocommerce-rest-api": "^1.0.2",
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "amazon-payments": "^0.2.9",
-    "axios": "^1.2.3",
+    "axios": "^1.7.2",
     "chart.js": "^4.2.1",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
@@ -48,6 +50,7 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "sharp": "^0.31.3",
+    "stripe": "^15.8.0",
     "swiper": "^8.4.5",
     "typescript": "4.9.4"
   },

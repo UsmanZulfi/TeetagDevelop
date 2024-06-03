@@ -17,7 +17,7 @@ const AdminDashboardWrapper = () => {
     const dasboardData = getDashboard();
     dasboardData.then((res: any) => {
       const result = res.data.result;
-
+  
       const data = [
         {
           id: 1,

@@ -40,7 +40,7 @@ export const Header = () => {
                   width={140}
                   height={70}
                   alt="header-logo"
-                  className="xl:w-72"
+                  className="md:w-40 xl:w-72"
                 />
               </Link>
             </div>
@@ -70,7 +70,7 @@ export const Header = () => {
                           : ""
                       }`}
                     >
-                      My Story
+                      My&nbsp;Story
                     </Link>
                   </li>
                   <li>
@@ -87,7 +87,7 @@ export const Header = () => {
                           : ""
                       }`}
                     >
-                      Track Your Tag
+                      Track&nbsp;You&nbsp;Tag
                     </Link>
                   </li>
                   <li>

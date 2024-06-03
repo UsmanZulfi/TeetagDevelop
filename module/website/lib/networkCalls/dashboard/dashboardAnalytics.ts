@@ -3,7 +3,7 @@ import { getAdminToken } from "./userDetails";
 
 //admin dashboard
 export function getDashboard() {
-  return axios.get(process.env.NEXT_PUBLIC_STAGING_SERVER_URL + `/dashboard`, {
+  return axios.get(process.env.NEXT_PUBLIC_STAGING_SERVER_URL + `dashboard`, {
     headers: {
       Authorization: `Bearer ${getAdminToken()}`,
     },

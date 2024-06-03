@@ -1012,9 +1012,13 @@ option:not(:first-of-type) {
 }
 
 @media (max-width: 767px) {
+
   #AmazonPayButton {
     height: 100px !important;
     width: 100% !important;
+  }
+  .forMobile{
+    margin-top: 140px;
   }
 
   .tag-span {

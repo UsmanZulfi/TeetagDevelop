@@ -84,7 +84,7 @@ const Contribution = () => {
         <Header />
         <div className="story-content">
           <div className="container">
-            <h1 className="text-center uppercase h3 font-fugaz shadow-heading">
+            <h1 className="text-center uppercase h3 font-fugaz shadow-heading forMobile" >
               make a contribution
             </h1>
           </div>
@@ -119,7 +119,7 @@ const Contribution = () => {
       )}
       <section className="section">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 xl:gap-44 items-start xl:items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 xl:gap-44 items-start lg:items-center xl:items-center">
             <div className="image-container hidden md:block">
               <Image
                 src="/assets/group-TeeShirt.png"

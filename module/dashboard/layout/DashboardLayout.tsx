@@ -14,6 +14,7 @@ const Header = dynamic(() => import("@/dashboard/components/Header/Header"), {
 });
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+
   return (
     <>
       <Toaster />

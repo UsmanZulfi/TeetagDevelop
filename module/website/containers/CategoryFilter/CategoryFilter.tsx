@@ -28,10 +28,20 @@ export const CategoryFilter = ({
 
   return (
     <form className={styles.cat__searchbox} onSubmit={handleSubmit}>
+      <style>
+        {`
+          .custom-placeholder::placeholder {
+            color: white;
+            fontSize: 20px
+          }
+        `}
+      </style>
       <input
         type="text"
-        placeholder="Search State"
+        style={{ color: 'white' }}
+        placeholder="Search State..."
         onChange={handleSearchChange}
+        className="custom-placeholder"
       />
 
       <button type="button">

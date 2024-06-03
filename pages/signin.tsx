@@ -158,8 +158,8 @@ const SignIn = () => {
                     }
                     className="btn__teetag_secondary width48"
                   >
-                    <FaFacebookF className="text-3xl md:text-lg" />
-                    <span className="hidden md:inline-block">
+                    <FaFacebookF className="text-3xl md:text-lg"  />
+                    <span className="hidden md:inline-block" >
                       Login with Facebook
                     </span>
                   </Link>
@@ -169,10 +169,11 @@ const SignIn = () => {
                       "/auth/google"
                     }
                     className="btn__teetag_secondary width48"
+               
                   >
-                    <FaGoogle className="text-3xl md:text-lg" />
-                    <span className="hidden md:inline-block">
-                      Login with Google
+                    <FaGoogle className="text-3xl md:text-lg"  />
+                    <span className="hidden md:inline-block"  >
+                    &nbsp;&nbsp; Login with Google
                     </span>
                   </Link>
                 </div>

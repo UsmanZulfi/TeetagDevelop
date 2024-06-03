@@ -295,6 +295,9 @@ export function getAdminToken() {
   const parseData = JSON.parse(data);
   const auth = parseData.auth;
   const { token } = JSON.parse(auth);
+
+
+
   return token;
 }
 

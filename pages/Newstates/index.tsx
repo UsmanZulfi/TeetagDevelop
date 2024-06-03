@@ -23,12 +23,14 @@ interface ProductProps {
   product: ProductType;
 }
 
-const SingleProduct = ({ product }: ProductProps) => {
+const Newstates = ({ product }: ProductProps) => {
   const [relatedProducts, setRelatedProducts] = useState<ProductType[]>([]);
   useEffect(() => {
-    async function getRelatedProducts(ids: number) {
-      const relatedArray = await fetchRelatedProducts(ids);
-    
+    async function getRelatedProducts(ids: number[]) {
+      const relatedArray = await fetchRelatedProducts([64]);
+    console.log('====================================');
+    console.log(relatedArray);
+    console.log('====================================');
       setRelatedProducts(relatedArray);
     }
     getRelatedProducts(product?.related_ids);
@@ -40,28 +42,29 @@ const SingleProduct = ({ product }: ProductProps) => {
   return (
     <>
       <TitleHead
-        title={product.name}
-        metaDesc={product.short_description}
-        metaTitle={product.name}
+        // title={product.name}
+        // metaDesc={product.short_description}
+        // metaTitle={product.name}
       />
       <Header />
-      <ProductDetail product={product} />
+      {/* <ProductDetail product={product} /> */}
       <Recipient />
-      <RelatedProducts relatedProducts={relatedProducts} />
+      {/* <RelatedProducts relatedProducts={relatedProducts} /> */}
       <Footer />
+    
     </>
   );
 };
 
-export default SingleProduct;
+export default Newstates;
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { productid } = ctx.params as IParams;
-  const product = await fetchProduct(productid);
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//   const { productid } = ctx.params as IParams;
+//   const product = await fetchProduct(productid);
 
-  return {
-    props: {
-      product,
-    },
-  };
-};
+//   return {
+//     props: {
+//       product,
+//     },
+//   };
+// };
