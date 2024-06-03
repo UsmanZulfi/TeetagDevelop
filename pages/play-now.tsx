@@ -3,12 +3,12 @@ import { Header } from "@/website/components/Header/Header";
 import Order from "@/website/containers/Orders/Order";
 import Rules from "@/website/containers/Rules/Rules";
 import { StateCollection } from "@/website/containers/StateCollection/StateCollection";
-import { fetchAllCategories } from "@/website/lib/networkCalls/storeFunctions";
+// import { fetchAllCategories } from "@/website/lib/networkCalls/storeFunctions";
 import { Category } from "@/website/lib/types/wooCommerceTypes";
-import { GetStaticProps } from "next";
+// import { GetStaticProps } from "next";
 import Head from "next/head";
 // import withAuth from "./hoc/withAuth";
-
+import {categoriesData} from './api/Categoris'
 interface PlayNowProps {
   categories: Category[];
 }
@@ -26,7 +26,7 @@ function Play({ categories }: PlayNowProps) {
       </Head>
       <Header />
       <Rules rules={rules} />
-      <StateCollection categories={categories} />
+      <StateCollection categories={categoriesData?.categories} />
       <div className="hidden sm:block" >
         <Order showBanner={false} />
       </div>
@@ -35,20 +35,20 @@ function Play({ categories }: PlayNowProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const categories: Category[] = await fetchAllCategories();
+// export const getStaticProps: GetStaticProps = async () => {
+//   const categories: Category[] = await fetchAllCategories();
 
-  if (!categories) {
-    return {
-      notFound: true,
-    };
-  }
-  return {
-    props: {
-      categories: categories,
-    },
-  };
-};
+//   if (!categories) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+//   return {
+//     props: {
+//       categories: categories,
+//     },
+//   };
+// };
 
 export default Play;
 // export default withAuth(Play)
