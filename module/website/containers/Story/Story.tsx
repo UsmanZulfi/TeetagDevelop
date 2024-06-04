@@ -41,7 +41,7 @@ export default function Story() {
           </div>
         </div>
         {/* Modified tag. Need to check on live */}
-        <video autoPlay loop muted playsInline><source src="/assets/jack.mp4" type="video/mp4"/></video>
+        <video autoPlay loop muted playsInline><source src="/assets/jack.mp4" type="video/mp4" /></video>
       </div>
       <div className="container">
         <div className="grid items-center grid-cols-1 gap-16 py-60  lg:gap-24 lg:py-40 lg:grid-cols-2 ">
@@ -79,7 +79,7 @@ export default function Story() {
               <video
                 ref={videoRef}
                 src="https://teetag.com/wp-content/uploads/2024/06/cbc-video.mp4?_=0"
-                controls
+                controls={false}
                 className="teetag-image-shadow"
                 onPlay={() => {
                   setShowButton(false);
@@ -104,7 +104,22 @@ export default function Story() {
                   <img src="/assets/playbutton.svg" alt="Play Button" />
                 </button>
               )}
+              {/* Thumbnail Image */}
+              <img
+                src="https://teetag.com/wp-content/uploads/2024/06/cbc-thumbnail.png"
+                alt="Thumbnail"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover", // To maintain aspect ratio
+                  opacity: showButton ? 1 : 0, // Show thumbnail when video is paused
+                }}
+              />
             </div>
+
           </div>
           <div className="order-1 px-0 lg:px-40 lg:order-2">
             <Heading3 title="Featured on cbs news" />

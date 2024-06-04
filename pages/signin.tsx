@@ -150,6 +150,11 @@ const SignIn = () => {
             </Formik>
             <div className="flex items-center justify-center">
               <div className="width97">
+              {window.innerWidth < 1080 ?(
+                  <div className="signup__box-center">
+                  <p className="text-xl uppercase">OR</p>
+                </div>
+                ):null}
                 <div className="md:grid grid-cols-1 flex justify-center items-start gap-10">
                   <Link
                     href={
@@ -177,7 +182,8 @@ const SignIn = () => {
                     </span>
                   </Link>
                 </div>
-
+                
+                
                 <p className="flex items-center justify-center gap-5 mt-28 text-x text-center">
                   Don't Have an Account?
                   <Link href="/signup" className="text-green-light">
