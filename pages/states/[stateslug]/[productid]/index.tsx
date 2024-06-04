@@ -26,7 +26,7 @@ interface ProductProps {
 const SingleProduct = ({ product }: ProductProps) => {
   const [relatedProducts, setRelatedProducts] = useState<ProductType[]>([]);
   useEffect(() => {
-    async function getRelatedProducts(ids: number) {
+    async function getRelatedProducts(ids: number[]) {
       const relatedArray = await fetchRelatedProducts(ids);
     
       setRelatedProducts(relatedArray);
