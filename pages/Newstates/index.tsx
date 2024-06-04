@@ -28,9 +28,6 @@ const Newstates = ({ product }: ProductProps) => {
   useEffect(() => {
     async function getRelatedProducts(ids: number[]) {
       const relatedArray = await fetchRelatedProducts([64]);
-    console.log('====================================');
-    console.log(relatedArray);
-    console.log('====================================');
       setRelatedProducts(relatedArray);
     }
     getRelatedProducts(product?.related_ids);
@@ -42,14 +39,14 @@ const Newstates = ({ product }: ProductProps) => {
   return (
     <>
       <TitleHead
-        // title={product.name}
-        // metaDesc={product.short_description}
-        // metaTitle={product.name}
+        title={product.name}
+        metaDesc={product.short_description}
+        metaTitle={product.name}
       />
       <Header />
-      {/* <ProductDetail product={product} /> */}
+       <ProductDetail product={product} /> 
       <Recipient />
-      {/* <RelatedProducts relatedProducts={relatedProducts} /> */}
+       <RelatedProducts relatedProducts={relatedProducts} />
       <Footer />
     
     </>
