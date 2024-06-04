@@ -78,7 +78,7 @@ export default function Story() {
             <div className="relative inline-block lg:mt-16 xl:mt-0">
               <video
                 ref={videoRef}
-                src="/assets/cbc-video.mp4"
+                src="https://teetag.com/wp-content/uploads/2024/06/cbc-video.mp4?_=0"
                 controls
                 className="teetag-image-shadow"
                 onPlay={() => {

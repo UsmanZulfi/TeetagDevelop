@@ -6,47 +6,47 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 //spaces might be leading to errors!? Renamed files without spaces
 const players = [
   {
-    image: "/assets/Dan_Kentucky.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/Dan_Kentucky.png",
     name: "Dan",
     state: "Kentucky",
   },
   {
-    image: "/assets/David_Illinois.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/David_Illinois.png",
     name: "David",
     state: "Illinois",
   },
   {
-    image: "/assets/Emma_Illinois.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/Emma_Illinois.png",
     name: "Emma",
     state: "Illinois",
   },
   {
-    image: "/assets/Evan_Illinois.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/Evan_Illinois.png",
     name: "Evan",
     state: "Illinois",
   },
   {
-    image: "/assets/Sophia+Ava_Illinois.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/SophiaAva_Illinois.png",
     name: "Sophia + Ava",
     state: "Illinois",
   },
   {
-    image: "/assets/Maggie_Illinois.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/Maggie_Illinois.png",
     name: "Maggie",
     state: "Illinois",
   },
   {
-    image: "/assets/Izzy_Illinois.PNG",
+    image: "https://teetag.com/wp-content/uploads/2024/06/Izzy_Illinois.jpg",
     name: "Izzy",
     state: "Illinois",
   },
   {
-    image: "/assets/Grace_Illinois.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/Grace_Illinois.png",
     name: "Grace",
     state: "Illinois",
   },
   {
-    image: "/assets/IMG_8674.png",
+    image: "https://teetag.com/wp-content/uploads/2024/06/IMG_8674.png",
     name: "Jack",
     state: "Illinois",
   },
