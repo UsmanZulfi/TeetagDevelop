@@ -6,7 +6,7 @@ import { SignInProps } from "@/website/lib/types/teetagTypes";
 import { ErrorMessage, Field, Form, Formik, FormikValues } from "formik";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,7 +43,17 @@ const SignIn = () => {
     password: "",
   };
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const iconClass = windowWidth > 1090 ? "text-3xl md:text-lg" : "text-xl";
   return (
     <div className="main-container">
       <Toaster position="top-center" reverseOrder={false} />
@@ -142,7 +152,8 @@ const SignIn = () => {
                   </Link>
                 </div>
                 {(isSubmitting && <LoadingSpinner />) || (
-                  <button className="btn-teetag yellow m-0 width99 padding-top-5">
+                  <button className={windowWidth >  1080 ? "btn-teetag yellow m-0 width99 padding-top-5" :  "btn-teetag yellow m-0 width99 padding-top-10"}>
+                      
                     Login
                   </button>
                 )}
@@ -150,12 +161,12 @@ const SignIn = () => {
             </Formik>
             <div className="flex items-center justify-center">
               <div className="width97">
-              {window.innerWidth < 1080 ?(
-                  <div className="signup__box-center">
+              {windowWidth < 1080  ?(
+                  <div className="signup__box-center" style={{marginTop:'-12px',marginBottom:'-12px'}}>
                   <p className="text-xl uppercase">OR</p>
                 </div>
                 ):null}
-                <div className="md:grid grid-cols-1 flex justify-center items-start gap-10">
+                <div className="md:grid grid-cols-1 flex justify-center items-start gap-10" >
                   <Link
                     href={
                       process.env.NEXT_PUBLIC_STAGING_SERVER_URL +
@@ -163,7 +174,7 @@ const SignIn = () => {
                     }
                     className="btn__teetag_secondary width48"
                   >
-                    <FaFacebookF className="text-3xl md:text-lg"  />
+                    <FaFacebookF className={iconClass}  />
                     <span className="hidden md:inline-block" >
                       Login with Facebook
                     </span>
@@ -176,7 +187,7 @@ const SignIn = () => {
                     className="btn__teetag_secondary width48"
                
                   >
-                    <FaGoogle className="text-3xl md:text-lg"  />
+                    <FaGoogle  className={iconClass}  />
                     <span className="hidden md:inline-block"  >
                     &nbsp;&nbsp; Login with Google
                     </span>
@@ -184,21 +195,24 @@ const SignIn = () => {
                 </div>
                 
                 
-                <p className="flex items-center justify-center gap-5 mt-28 text-x text-center">
+                <p className={windowWidth > 1090 ?"flex items-center justify-center gap-5 mt-28 text-x text-center":"flex items-center justify-center gap-5 mt-28 text-xl text-center"} >
                   Don't Have an Account?
-                  <Link href="/signup" className="text-green-light">
+                  <Link href="/signup" className="text-green-light" >
                     Sign up
                   </Link>
                 </p>
               </div>
             </div>
-            <div className="Login__box-center">
-              <p className="text-xl uppercase">OR</p>
-            </div>
+            {windowWidth > 1090 ? (
+                <div className="Login__box-center">
+                <p className="text-xl uppercase">OR</p>
+              </div>
+            ):null}
+
           </div>
           <Link
             href="/"
-            className="flex justify-center items-center gap-5 mt-20 text-x text-center hover:text-green-light"
+            className={windowWidth > 1090 ? "flex justify-center items-center gap-5 mt-20 text-x text-center hover:text-green-light":"flex justify-center items-center gap-5 mt-8 text-xl text-center hover:text-green-light"}
           >
             <Image
               src="/assets/left_arrow.png"

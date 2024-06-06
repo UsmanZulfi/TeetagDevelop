@@ -33,14 +33,15 @@ export const Header = () => {
       >
         <div className="container">
           <div className="flex justify-between items-center 2xl:mx-40">
-            <div className="">
+            <div className="hello">
               <Link href="/" className={styles.logo}>
                 <Image
                   src="/assets/logo-header.png"
                   width={140}
                   height={70}
                   alt="header-logo"
-                  className="md:w-40 xl:w-72"
+                  className="md:w-45 xl:w-72"
+                  
                 />
               </Link>
             </div>

@@ -14,7 +14,7 @@ import {
 } from "formik";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
@@ -70,6 +70,16 @@ const SignUp = () => {
     password: "",
   };
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <div className="main-container-signup">
       <Toaster position="top-center" reverseOrder={false} />
@@ -80,23 +90,25 @@ const SignUp = () => {
       />
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-40 signup_box">
-          <div className="pt-32 lg:pt-64 order-2 lg:order-1">
-            <div className="lg:max-w-2xl">
-              <Heading3 title="What is TEETAG?" />
+        {windowWidth > 1090 ? (
+            <div className="pt-32 lg:pt-64 order-2 lg:order-1">
+              <div className="lg:max-w-2xl">
+                <Heading3 title="What is TEETAG?" />
+              </div>
+              <p className="h9 mt-16 lg:mt-30">
+                TeeTag is simple… It’s TAG! America’s LARGEST game of tag through
+                the use of custom t-shirts in order to help raise money for
+                children who’ve lost a parent to Cancer. TeeTag spans across all
+                50 states of America and is meant to be a fun, interactive,
+                pay-it-forward game to raise money for a greater cause.
+              </p>
+              <a href="/story">
+                <button className="btn-teetag yellow padding-top-5" type="submit">
+                  View My Story
+                </button>
+              </a>
             </div>
-            <p className="h9 mt-16 lg:mt-30">
-              TeeTag is simple… It’s TAG! America’s LARGEST game of tag through
-              the use of custom t-shirts in order to help raise money for
-              children who’ve lost a parent to Cancer. TeeTag spans across all
-              50 states of America and is meant to be a fun, interactive,
-              pay-it-forward game to raise money for a greater cause.
-            </p>
-            <a href="/story">
-            <button className="btn-teetag yellow padding-top-5" type="submit">
-              View My Story
-            </button>
-            </a>
-          </div>
+          ) : null}
           <div className="signup__box order-1 lg:order-2">
             <Heading title="Sign Up" />
             <div className="relative">
@@ -189,7 +201,8 @@ const SignUp = () => {
                   <div className="teetag__input margin-top">
                     <label
                       htmlFor="email"
-                      className="block mb-4 capitalize font-fugaz"
+                      className="block mb-4 capitalize font-fugaz mt-6 md:mt-0"
+                      
                     >
                       Email
                     </label>
@@ -211,7 +224,7 @@ const SignUp = () => {
                     <div className="col-span-1 teetag__input">
                       <label
                         htmlFor="phone"
-                        className="block mb-4 capitalize font-fugaz"
+                        className="block mb-4 capitalize font-fugaz mt-6 md:mt-0"
                       >
                         Phone Number
                       </label>
@@ -232,7 +245,7 @@ const SignUp = () => {
                     <div className="col-span-1 teetag__input">
                       <label
                         htmlFor="password"
-                        className="block mb-4 capitalize font-fugaz"
+                        className="block mb-4 capitalize font-fugaz mt-6 md:mt-0"
                       >
                         Password
                       </label>
@@ -253,7 +266,8 @@ const SignUp = () => {
                   </div>
                   {(isSubmitting && <LoadingSpinner />) || (
                     <button
-                      className="btn-teetag yellow margin-top-5 padding-top-5"
+                  
+                      className=  {windowWidth >  1080 ? "btn-teetag yellow margin-top-5 padding-top-5" :  "btn-teetag yellow margin-top-5 padding-top-10"}
                       type="submit"
                     >
                       Sign Up

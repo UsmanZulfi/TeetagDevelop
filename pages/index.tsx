@@ -26,7 +26,7 @@ export default function Home() {
       <States />
       <Minions />
       <Players />
-      <PreviewPage/>
+      {/* <PreviewPage/> */}
       <Order showBanner={true} />
       <Footer />
     </>

@@ -84,14 +84,26 @@ const Contribution = () => {
         <Header />
         <div className="story-content">
           <div className="container">
-            <h1 className="text-center uppercase h3 font-fugaz shadow-heading forMobile" >
-              make a contribution
-            </h1>
+            {
+              windowWidth > 768 ?(
+                <h1 className="text-center uppercase h3 font-fugaz shadow-heading forMobile"  >
+              
+                make a contribution
+              </h1>
+
+              ):(
+                <h1 className="text-center uppercase h3 font-fugaz shadow-heading forMobile"  >
+              
+                make a <br/> contribution
+              </h1>
+              )
+            }
+          
           </div>
         </div>
       </section>
       {windowWidth > 768 ? (
-        <div className="container">
+        <div className="container" style={{marginBottom:'-5%',width:'80%'}}>
           <p className="mt-10 text-center h10 px-11 md:px-52 lg:px-80 md:font-medium">
             Contributions are a fast and easy way to continue spreading the game of
             TeeTag while also raising money for the cause! For every $25 contributed
@@ -105,7 +117,7 @@ const Contribution = () => {
           </p>
         </div>
       ) : (
-          <p className="mt-10 text-center h11 px-12 md:px-52 lg:px-80 md:font-medium h9" style={{paddingLeft:"7%",paddingRight:"7%"}}>
+          <p className="mt-20 text-center h11 px-12 md:px-52 lg:px-80 md:font-medium h9" >
             Contributions are a fast and easy way to continue spreading the game of
             TeeTag while also raising money for the cause! For every $25 contributed
             - 1 selectively chosen individual will automatically be tagged and sent
@@ -117,19 +129,20 @@ const Contribution = () => {
             cause.
           </p>
       )}
-      <section className="section">
+      <section className="section" >
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 xl:gap-44 items-start lg:items-center xl:items-center">
+          <div className="flex flex-col lg:flex-row lg:gap-20 xl:gap-30 items-start lg:items-center xl:items-center mx-4 lg:mx-8">
             <div className="image-container hidden md:block">
               <Image
                 src="/assets/group-TeeShirt.png"
                 fill
                 alt="contribution-image"
                 className="teetag-image-shadow"
+                
               />
             </div>
             <div>
-              <h3 className="h5 font-fugaz uppercase text-green-light mb-10">
+              <h3 className= {windowWidth > 768 ?"h5 font-fugaz uppercase text-green-light mb-10":"h2 font-fugaz uppercase text-green-light mb-10"}>
                 Custom Contribution
               </h3>
               <div>
@@ -181,7 +194,7 @@ const Contribution = () => {
                 </div>
               </div>
               <button
-                className="btn-teetag text-center yellow btn-contribute_2 padding-top-5"
+                className= {windowWidth > 768 ? "btn-teetag text-center yellow btn-contribute_2 padding-top-5":"btn-teetag text-center yellow btn-contribute_2 padding-top-10"} 
                 onClick={handleContribute}
               >
                 Contribute Now
@@ -190,7 +203,7 @@ const Contribution = () => {
           </div>
         </div>
       </section>
-      <section className={styles.section}>
+      <section className={styles.section} style={{paddingTop:0}}>
         <div className="container">
           <ul className="teetag-list2 sm">
             <li>

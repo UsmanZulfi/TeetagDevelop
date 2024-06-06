@@ -1,8 +1,19 @@
 import { Header } from "module/website/components/Header/Header";
 import Link from "next/link";
 import styles from "./Hero.module.css";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <section className={styles.hero}>
       <Header />
@@ -12,14 +23,14 @@ export default function Hero() {
             Welcome to <span className="uppercase">TeeTag</span>
           </h4>
           <div className={styles.separator}></div>
-          <h1 className="mt-12 uppercase h3 font-fugaz shadow-heading">
+          <h1 className={windowWidth < 767 ? "mt-12 uppercase h1 font-fugaz shadow-heading" : "mt-12 uppercase h3 font-fugaz shadow-heading"}>
             AMERICA'S LARGEST GAME OF{" "}
             <span className="tag-span">
               <span className="text-yellow-primary">TAG</span> For a Greater
               Cause!
             </span>
           </h1>
-          <Link href="/play-now" className="btn-teetag yellow min-width-300">
+          <Link href="/play-now" className="btn-teetag yellow min-width-300 " style={{paddingTop:'15px'}} >
             Play Now
           </Link>
         </div>

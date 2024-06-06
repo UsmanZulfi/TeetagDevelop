@@ -52,4 +52,13 @@
         height: 2px;
         max-width: 280px;
     }
+    .hero{
+        height: 70%;
+        
+    }
+    .content h4{
+        font-size: 4.8rem;
+    }
+    
+    
 }

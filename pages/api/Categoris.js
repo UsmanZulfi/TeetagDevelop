@@ -223,19 +223,19 @@ export const categoriesData = {
           }
         ]
       },
-      {
-        id: 78,
-        name: "Louisiana",
-        slug: "louisiana",
-        image: [
-          {
-            id: 2602,
-            src: "https://teetag.com/wp-content/uploads/2022/12/LA-to-the-bar-1.png",
-            name: "LA to the bar",
-            alt: ""
-          }
-        ]
-      },
+      // {
+      //   id: 78,
+      //   name: "Louisiana",
+      //   slug: "louisiana",
+      //   image: [
+      //     {
+      //       id: 2602,
+      //       src: "https://teetag.com/wp-content/uploads/2022/12/LA-to-the-bar-1.png",
+      //       name: "LA to the bar",
+      //       alt: ""
+      //     }
+      //   ]
+      // },
       {
         id: 111,
         name: "Lousiana",

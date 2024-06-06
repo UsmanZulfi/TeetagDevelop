@@ -43,11 +43,11 @@ const players = [
   {
     image: "https://teetag.com/wp-content/uploads/2024/06/Grace_Illinois.png",
     name: "Grace",
-    state: "Illinois",
+    state: "Virginia",
   },
   {
     image: "https://teetag.com/wp-content/uploads/2024/06/IMG_8674.png",
-    name: "Jack",
+    name: "Paul",
     state: "Illinois",
   },
 ];

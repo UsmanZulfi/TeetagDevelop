@@ -172,6 +172,7 @@ body {
 
 .teetag-image-shadow {
   background: #0e0e0e;
+  
   box-shadow: 10px 10px 0 var(--yellow-primary);
 }
 
@@ -342,7 +343,7 @@ option:not(:first-of-type) {
 }
 .btn-contribute_2 {
   margin-top: 60px !important;
-  width: 80%;
+  width: 70%;
 }
 .btn-contribute {
   margin-top: 60px !important;
@@ -426,7 +427,7 @@ option:not(:first-of-type) {
 .hamburger .icon {
   transition-duration: 0.5s;
   position: absolute;
-  height: 2px;
+  height: 3px;
   width: 25px;
   top: 18px;
   background-color: #ffff00;
@@ -435,7 +436,7 @@ option:not(:first-of-type) {
   transition-duration: 0.5s;
   position: absolute;
   width: 25px;
-  height: 2px;
+  height: 3px;
   background-color: #ffff00;
   content: "";
   top: -8px;
@@ -444,7 +445,7 @@ option:not(:first-of-type) {
   transition-duration: 0.5s;
   position: absolute;
   width: 25px;
-  height: 2px;
+  height: 3px;
   background-color: #ffff00;
   content: "";
   top: 8px;
@@ -977,6 +978,14 @@ option:not(:first-of-type) {
   .btn-teetag {
     padding: 16px 70px;
   }
+  .signup__box {
+    background: #0e0e0e;
+    border: 1px solid var(--green-light);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 40px 3.5vw;
+    margin-top: 2px;
+    position: relative;
+  }
 }
 @media (min-width: 1650px) {
   .section {
@@ -1018,7 +1027,8 @@ option:not(:first-of-type) {
     width: 100% !important;
   }
   .forMobile{
-    margin-top: 140px;
+    margin-top: 20px;
+   
   }
 
   .tag-span {
@@ -1075,7 +1085,7 @@ option:not(:first-of-type) {
     font-size: 3.8rem;
   }
   .login__box {
-    padding: 30px 20px;
+    padding: 30px 10px;
   }
 
   .teetag-checkbox input {
@@ -1096,6 +1106,19 @@ option:not(:first-of-type) {
 
   .teetag-image-shadow {
     box-shadow: 6px 6px 0 var(--yellow-primary);
+  }
+  .contribution-hero {
+    height: 240px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("/assets/contribution-header.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .btn-contribute_2 {
+  padding-top: 5%;
+    margin-top: 60px !important;
+    width: 100%;
   }
 }
 @media (max-width: 600px) {
