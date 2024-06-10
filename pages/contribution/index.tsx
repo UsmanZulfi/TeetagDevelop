@@ -92,13 +92,12 @@ const Contribution = () => {
               </h1>
 
               ):(
-                <h1 className="text-center uppercase h3 font-fugaz shadow-heading forMobile"  >
+                <h1 className="text-center uppercase heading font-fugaz shadow-heading forMobile"  >
               
                 make a <br/> contribution
               </h1>
               )
             }
-          
           </div>
         </div>
       </section>

@@ -3,8 +3,23 @@ import { Header } from "@/website/components/Header/Header";
 import Heading3 from "@/website/components/Heading3/Heading3";
 import { TitleHead } from "@/website/components/TitleHead/TitleHead";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const story = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <>
       <TitleHead
@@ -16,9 +31,17 @@ const story = () => {
         <Header />
         <div className="story-content">
           <div className="container">
-            <h1 className="text-center uppercase h3 font-fugaz shadow-heading">
+          {
+              windowWidth > 768 ?(
+                <h1 className="text-center uppercase h3 font-fugaz shadow-heading">
               Jack Bradley
             </h1>
+              ):(
+                <h1 className="text-center uppercase heading font-fugaz shadow-heading">
+              Jack Bradley
+            </h1>
+              )
+            }
           </div>
         </div>
       </section>
