@@ -7,14 +7,23 @@ interface StateProps {
   category: Category;
 }
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 interface StateProps {
   category: Category;
 }
 
 export default function State({ category }: StateProps) {
   const [playCategory, setPlayCategory] = useState<Category>(category);
-  console.log("This is category:", playCategory.image[0]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   // Default image data
   const defaultImage = {
     src: "/assets/placeholder.png",
@@ -40,9 +49,13 @@ export default function State({ category }: StateProps) {
         height={140}
         className="w-120"
       />
-      <h4 className="mt-4 text-center uppercase h8 font-fugaz text-yellow-primary">
-        {playCategory.name}
-      </h4>
+      {windowWidth > 767 ? (
+        <h4 className="mt-4 text-center uppercase h8 font-fugaz text-yellow-primary">
+          {playCategory.name}
+        </h4>
+      ) :       <h4 className="mt-4 text-center uppercase h8 font-fugaz text-yellow-primary" style={{fontSize:playCategory?.name?.length>9?"2.3rem":22}}>
+      {playCategory.name}
+    </h4>}
     </Link>
   );
 }
