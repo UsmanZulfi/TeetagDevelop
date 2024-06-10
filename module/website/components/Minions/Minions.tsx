@@ -2,8 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Heading3 from "../Heading3/Heading3";
 import TeetagList from "../TeetagList/TeetagList";
-
+import useWindowWidth from '../UserWindowWidth';
 const Minions = () => {
+  const windowWidth = useWindowWidth();
+  const height = windowWidth > 767 ? 80 : 54;
+  const fontSize = windowWidth > 767 ? "1.9rem" : 14.19;
+  const paddingLeft = windowWidth > 767 ? 30 : 25;
+
+  const style = {
+    height: `${height}px`,
+    fontSize: fontSize,
+    paddingLeft: `${paddingLeft}px`, 
+    paddingRight: `${paddingLeft}px`,
+  };
+
   return (
     <section className="mb-40">
       <div className="container">
@@ -41,10 +53,11 @@ const Minions = () => {
               <Link
                 href="/apply-minion"
                 className="text-center btn-teetag yellow"
+                style={style}
               >
                 Become a State Ambassador
               </Link>
-              <Link href="/minions" className="text-center btn-teetag green">
+              <Link href="/minions" className="text-center btn-teetag green"  style={style}>
                 current state ambassadors
               </Link>
             </div>

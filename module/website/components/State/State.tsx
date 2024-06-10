@@ -2,29 +2,20 @@ import { Category } from "@/website/lib/types/wooCommerceTypes";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./State.module.css";
-
+import useWindowWidth from '../UserWindowWidth';
 interface StateProps {
   category: Category;
 }
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 interface StateProps {
   category: Category;
 }
 
 export default function State({ category }: StateProps) {
   const [playCategory, setPlayCategory] = useState<Category>(category);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  // Default image data
+  const windowWidth = useWindowWidth();
+ 
   const defaultImage = {
     src: "/assets/placeholder.png",
     alt: "placeholder image",

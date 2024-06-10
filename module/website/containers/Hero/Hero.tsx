@@ -30,7 +30,7 @@ export default function Hero() {
               Cause!
             </span>
           </h1>
-          <Link href="/play-now" className="btn-teetag yellow min-width-300 " style={{paddingTop:'15px'}} >
+          <Link href="/play-now" className="btn-teetag yellow min-width-300 " >
             Play Now
           </Link>
         </div>
