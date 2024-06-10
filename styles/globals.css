@@ -94,10 +94,18 @@ body {
 }
 
 .shadow-heading {
-  text-shadow: 1.30172px 2.60345px 0 #000000,
-    2.60345px 5.2069px 0 var(--green-light);
-}
-
+  text-shadow: 
+  -1px 0 0 var(--green-light),          /* Inner shadow left */
+  1px 0 0 var(--green-light),            /* Inner shadow right */
+  0 -1px 0 var(--green-light),          /* Inner shadow top */
+  0 1px 0 var(--green-light),              /* Inner shadow bottom */
+  -0.7px -1px 0 var(--green-light),       /* Inner shadow top-left corner */
+  1px -1px 0 var(--green-light),         /* Inner shadow top-right corner */
+  -1px 1px 0 var(--green-light),        /* Inner shadow bottom-left corner */
+  1px 1px 0 var(--green-light),            /* Inner shadow bottom-right corner */
+  2px 2px 0 #000000,        /* Existing outer shadow 1 */
+  3px 4px 0 var(--green-light); /* Existing outer shadow 2 *//* Existing outer shadow 2 */
+}/* Existing outer shadow 2 */
 .leaderboard-list {
   counter-reset: state-counter;
 }
@@ -771,16 +779,17 @@ option:not(:first-of-type) {
   box-sizing: border-box;
   color: var(--black-secondary);
   display: inline-block;
-  height: 50px;
+  height: 54px;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 10px;
+  align-content: center;
   /* padding: 30px, 60px, 30px, 60px; */
   position: relative;
   text-transform: uppercase;
   margin-top: 30px;
+  padding-top: 1.5px;
   transition: all 0.4s ease-in-out;
 }
 
