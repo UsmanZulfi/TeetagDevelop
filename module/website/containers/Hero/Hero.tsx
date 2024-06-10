@@ -23,7 +23,7 @@ export default function Hero() {
             Welcome to <span className="uppercase">TeeTag</span>
           </h4>
           <div className={styles.separator}></div>
-          <h1 className={windowWidth < 767 ? "mt-12 uppercase h1 font-fugaz shadow-heading" : "mt-12 uppercase h3 font-fugaz shadow-heading"}>
+          <h1 className={windowWidth < 767 ? "mt-20 uppercase heading font-fugaz shadow-heading mb-20 px-1" : "mt-12 uppercase h2 font-fugaz shadow-heading"}>
             AMERICA'S LARGEST GAME OF{" "}
             <span className="tag-span">
               <span className="text-yellow-primary">TAG</span> For a Greater

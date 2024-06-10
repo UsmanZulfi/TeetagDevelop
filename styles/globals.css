@@ -46,7 +46,10 @@ body {
 .h2 {
   font-size: 6.4rem;
 }
-
+.heading{
+  font-size: 38px;
+  line-height: 41.72px;
+}
 .h3 {
   font-size: 5.6rem;
 }
