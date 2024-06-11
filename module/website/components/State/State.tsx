@@ -28,7 +28,10 @@ export default function State({ category }: StateProps) {
   return (
    
     <Link
-      href={`/states/${encodeURIComponent(category.id)}`}
+    href={{
+      pathname: `/NewSatates`
+      // query: { playCategory: JSON.stringify(playCategory) }
+    }}
       className={styles.state}
     >
       <Image

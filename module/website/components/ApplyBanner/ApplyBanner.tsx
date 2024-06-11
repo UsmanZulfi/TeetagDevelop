@@ -1,4 +1,5 @@
 import Link from "next/link";
+import useWindowWidth from "../UserWindowWidth";
 
 interface ApplyBannerProps {
   title: string;
@@ -13,15 +14,16 @@ const ApplyBanner = ({
   btnUrl,
   titleClass,
 }: ApplyBannerProps) => {
+  const screenWidth=useWindowWidth();
   return (
     <section className={`apply-banner ${titleClass && `lg:py-12`}`}>
       <div className="container">
-        <div className="flex flex-col md:flex-row text-center md:text-left justify-center md:justify-between items-center gap-10 md:gap-0">
+        <div className="flex flex-col md:flex-row text-center md:text-left justify-center md:justify-between  items-center gap-10 md:gap-0" >
           <h2
             className={
               (titleClass ? titleClass : "h3") +
               " uppercase text-black-bg font-fugaz"
-            }
+            } 
           >
             {title}
           </h2>
@@ -31,9 +33,11 @@ const ApplyBanner = ({
             style={{
               marginTop: "0px",
               color: "rgb(0 255 204 / var(--tw-text-opacity))",
+              
+              // width:160
             }}
           >
-            {btnText}
+           Play&nbsp;Now
           </Link>
         </div>
       </div>
